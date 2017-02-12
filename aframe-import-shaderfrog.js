@@ -33,7 +33,7 @@ function importShaderFrog(shaderName, importedShaderJSON, defaults) {
         importedShader.schema[key] = {
             is: 'uniform',
             type: remap(key, importedShaderJSON.uniforms[key].glslType),
-            default: (defaults && defaults[key]) || remapDefault(key, importedShaderJSON.uniforms[key].glslType)
+            default: (defaults && defaults[key]) || importedShaderJSON.uniforms[key].value || remapDefault(key, importedShaderJSON.uniforms[key].glslType)
         };
     });
 
