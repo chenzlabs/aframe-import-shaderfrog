@@ -50,8 +50,6 @@ function importShaderFrog(shaderName, importedShaderJSON, defaults) {
         importedShader.fragmentShader = fragmentShader.substring(0, insertCodeIndex) + 'time = time1000 / 1000.0;\n' + fragmentShader.substring(insertCodeIndex);
     }
 
-    console.log(JSON.stringify(importedShader));
-
     // register the shader with A-Frame
     AFRAME.registerShader(shaderName, importedShader);
 }
