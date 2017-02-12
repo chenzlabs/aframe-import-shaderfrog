@@ -14,6 +14,7 @@ function importShaderFrog(shaderName, importedShaderJSON, defaults) {
     // This maps (name and) JSON glslType to AFRAME shader schema type.
     function remap(key, type) {
         if (key === 'time') return 'time';
+        if (key === 'color') return 'color';
         if (type === 'sampler2D') return 'map';
         if (type === 'float') return 'number';
         return type;
